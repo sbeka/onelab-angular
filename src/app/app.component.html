@@ -1,7 +1,4 @@
-<app-todo-form></app-todo-form>
-<app-todo-list></app-todo-list>
-
-
+<app-todo></app-todo>
 
 <button (click)="toggleChildComp = !toggleChildComp">Toggle child</button>
 <div *ngIf="toggleChildComp">
@@ -11,6 +8,3 @@
   <input type="text" [(ngModel)]="fullName">
   <input type="number" [(ngModel)]="age">
 </div>
-
-
-<hr>
