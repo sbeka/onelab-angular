@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SevenComponent } from './seven/seven.component';
 import { FormsModule } from "@angular/forms";
+import {ChildComponent} from "./child-comp/child-comp.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SevenComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
