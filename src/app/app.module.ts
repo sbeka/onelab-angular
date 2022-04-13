@@ -9,6 +9,10 @@ import { ChildComponent } from "./child-comp/child-comp.component";
 import { BoldDirective } from './shared/directives/bold.directive';
 import { LessonPipesComponent } from './lesson-pipes/lesson-pipes.component';
 import { FullNamePipe } from './shared/pipes/full-name.pipe';
+import {TodoComponent} from './todo/todo.component';
+import {TodoListComponent} from './todo/list/list.component';
+import {TodoItemComponent} from './todo/list/item/item.component';
+import {TodoFormComponent} from './todo/form/form.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { FullNamePipe } from './shared/pipes/full-name.pipe';
     BoldDirective,
     LessonPipesComponent,
     FullNamePipe,
+    TodoComponent,
+    TodoListComponent,
+    TodoItemComponent,
+    TodoFormComponent,
   ],
   imports: [
     BrowserModule,
