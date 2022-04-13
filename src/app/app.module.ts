@@ -5,7 +5,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SevenComponent } from './seven/seven.component';
 import { FormsModule } from "@angular/forms";
-import {ChildComponent} from "./child-comp/child-comp.component";
+import { ChildComponent } from "./child-comp/child-comp.component";
+import { BoldDirective } from './shared/directives/bold.directive';
+import { LessonPipesComponent } from './lesson-pipes/lesson-pipes.component';
+import { FullNamePipe } from './shared/pipes/full-name.pipe';
 
 @NgModule({
   declarations: [
@@ -13,6 +16,9 @@ import {ChildComponent} from "./child-comp/child-comp.component";
     HomeComponent,
     SevenComponent,
     ChildComponent,
+    BoldDirective,
+    LessonPipesComponent,
+    FullNamePipe,
   ],
   imports: [
     BrowserModule,
