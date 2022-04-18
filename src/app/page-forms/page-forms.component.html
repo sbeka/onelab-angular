@@ -1,0 +1,32 @@
+<h3>Reactive forms</h3>
+
+<div *ngFor="let formGroupItem of getFormControls; let idx = index">
+  <form class="my-form" [formGroup]="formGroupItem">
+    <div>
+      <label>Username:</label>
+      <input type="text" formControlName="username">
+      <div *ngIf="formGroupItem.touched">
+        <div class="red-text" *ngIf="usernameCtrl(formGroupItem, 'username')?.required">Обязательное поле</div>
+        <div class="red-text" *ngIf="usernameCtrl(formGroupItem, 'username')?.minlength">Минимальная длина должно быть 3 символов</div>
+      </div>
+    </div>
+    <div>
+      <label>Password:</label>
+      <input type="password" formControlName="password">
+    </div>
+    <div>
+      <label>Full name:</label>
+      <input type="text" formControlName="fullName">
+    </div>
+    <div>
+      <label>Country:</label>
+      <input type="text" formControlName="country">
+    </div>
+  </form>
+  <button type="button" (click)="deleteFormGroup(idx)">удалить</button>
+</div>
+
+<div>
+  <button type="submit" (click)="submit()">Submit</button>
+  <button type="submit" (click)="addUserFormGroup()">Add user form group</button>
+</div>

@@ -1,0 +1,11 @@
+<p>FullName: {{fullName}}</p>
+
+<button (click)="setFullName('John')">set fullname</button>
+
+<div>
+  <input type="text" [(ngModel)]="itemValue">
+  <button type="button" (click)="addItem()">Добавить</button>
+</div>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>

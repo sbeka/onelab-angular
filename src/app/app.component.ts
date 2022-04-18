@@ -11,6 +11,8 @@ export class AppComponent implements OnInit, OnChanges {
 
   toggleChildComp = true;
 
+  tab = 'tab1';
+
   constructor() {
   }
 

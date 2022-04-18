@@ -1,10 +1,9 @@
-<app-todo></app-todo>
-
-<button (click)="toggleChildComp = !toggleChildComp">Toggle child</button>
-<div *ngIf="toggleChildComp">
-
-  <child-comp [name]="fullName" [age]="age" (changeDataHandle)="dataHandleChild($event)"></child-comp>
-
-  <input type="text" [(ngModel)]="fullName">
-  <input type="number" [(ngModel)]="age">
+<div class="nav">
+  <button routerLink="/home" routerLinkActive="active">home</button>
+  <button routerLink="/pipes" routerLinkActive="active">pipes</button>
+  <button routerLink="/seven" routerLinkActive="active">seven</button>
+  <button routerLink="/service" routerLinkActive="active">service</button>
+  <button routerLink="/forms" routerLinkActive="active">forms</button>
 </div>
+
+<router-outlet></router-outlet>

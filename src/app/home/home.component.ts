@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../shared/services/data.service";
 
 @Component({
   selector: 'app-home',
@@ -60,5 +61,13 @@ export class HomeComponent implements OnInit {
 
   browser = 'opera';
 
-  ngOnInit() {}
+  fullName: string | null | undefined = '';
+
+  constructor(private dataService: DataService) {
+  }
+
+
+  ngOnInit() {
+    this.fullName = this.dataService.getFromStorage();
+  }
 }
