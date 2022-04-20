@@ -1,0 +1,8 @@
+<h4>Http Client</h4>
+
+<div class="card" *ngFor="let product of products">
+  <img [src]="product.images[0]" alt="">
+  <h3>{{product.title}}</h3>
+  <p><strong>Цена:</strong> {{product.price}}$</p>
+  <button (click)="openProduct(product.id)">Подробнее</button>
+</div>

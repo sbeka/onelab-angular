@@ -18,6 +18,11 @@ import { PageServiceComponent } from './page-service/page-service.component';
 import { PageFormsComponent } from './page-forms/page-forms.component';
 import {RouterModule} from "@angular/router";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
+import {LoginGuard} from "./shared/guards/login.guard";
+import { HttpClientComponent } from './http-client/http-client.component';
+import {ProductService} from "./shared/services/product.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -35,6 +40,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PageServiceComponent,
     PageFormsComponent,
     PageNotFoundComponent,
+    LoginComponent,
+    HttpClientComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,37 +54,55 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         pathMatch: 'full'
       },
       {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
         path: 'home',
-        component: HomeComponent
-      },
-      {
-        path: 'pipes',
-        component: LessonPipesComponent,
-      },
-      {
-        path: 'seven',
-        component: SevenComponent,
-      },
-      {
-        path: 'service',
-        component: PageServiceComponent,
-      },
-      {
-        path: 'forms',
-        component: PageFormsComponent,
-      },
-      {
-        path: 'forms/:username',
-        component: PageFormsComponent,
+        canActivateChild: [LoginGuard],
+        children: [
+          {
+            path: '',
+            component: HomeComponent,
+          },
+          {
+            path: 'pipes',
+            component: LessonPipesComponent,
+          },
+          {
+            path: 'seven',
+            component: SevenComponent,
+          },
+          {
+            path: 'service',
+            component: PageServiceComponent,
+          },
+          {
+            path: 'forms',
+            component: PageFormsComponent,
+            children: [
+              {
+                path: ':username',
+                component: PageFormsComponent,
+              },
+            ],
+          },
+          {
+            path: 'http',
+            component: HttpClientComponent,
+          }
+        ],
       },
       {
         path: '**',
         component: PageNotFoundComponent,
       },
     ]),
+    HttpClientModule,
   ],
   providers: [
     DataService,
+    ProductService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,11 @@
 <div class="nav">
   <button routerLink="/home" routerLinkActive="active">home</button>
-  <button routerLink="/pipes" routerLinkActive="active">pipes</button>
-  <button routerLink="/seven" routerLinkActive="active">seven</button>
-  <button routerLink="/service" routerLinkActive="active">service</button>
-  <button routerLink="/forms" routerLinkActive="active">forms</button>
+  <button routerLink="/home/pipes" routerLinkActive="active">pipes</button>
+  <button routerLink="/home/seven" routerLinkActive="active">seven</button>
+  <button routerLink="/home/service" routerLinkActive="active">service</button>
+  <button routerLink="/home/forms" routerLinkActive="active">forms</button>
+  <button routerLink="/home/http" routerLinkActive="active">http client</button>
+  <button (click)="logout()">logout</button>
 </div>
 
 <router-outlet></router-outlet>

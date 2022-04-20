@@ -1,6 +1,6 @@
 import {Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, ActivationEnd, NavigationEnd, Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-page-forms',
@@ -13,9 +13,16 @@ export class PageFormsComponent implements OnInit {
 
   username = '';
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     // this.username = this.activatedRoute.snapshot.queryParams['username'];
     this.username = this.activatedRoute.snapshot.paramMap.get('username') || '';
+
+    /*this.router.events.subscribe((event) => {
+      if (event instanceof ActivationEnd) {
+        console.log(event);
+        // console.log(event.snapshot.paramMap.get('username'));
+      }
+    });*/
 
     this.usersForm = new FormArray([
       this.createNewFormGroup(),

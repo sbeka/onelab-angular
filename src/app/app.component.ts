@@ -1,4 +1,5 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit, OnChanges {
 
   tab = 'tab1';
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -30,5 +31,10 @@ export class AppComponent implements OnInit, OnChanges {
 
   dataHandleChild(data: string) {
     console.log(data);
+  }
+
+  logout() {
+    localStorage.removeItem('login');
+    this.router.navigateByUrl('/login');
   }
 }
