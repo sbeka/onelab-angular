@@ -1,5 +1,12 @@
 <h4>Http Client</h4>
 
+<div class="search-field" [formGroup]="searchForm">
+  <input type="text" formControlName="query" placeholder="Введите название товара">
+</div>
+
+<br>
+<br>
+
 <div class="card" *ngFor="let product of products">
   <img [src]="product.images[0]" alt="">
   <h3>{{product.title}}</h3>

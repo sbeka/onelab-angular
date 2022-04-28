@@ -3,6 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Product, ResponseProduct} from "../interfaces/product.interface";
 
+interface ProductFilterModel {
+  query: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,8 +15,17 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProducts(): Observable<ResponseProduct> {
-    return this.httpClient.get<ResponseProduct>(`${this.apiUrl}/products`);
+  getProducts(params = {}): Observable<ResponseProduct> {
+    return this.httpClient.get<ResponseProduct>(`${this.apiUrl}/products`, {
+      params,
+    });
+  }
+
+  searchProducts(params = {}): Observable<ResponseProduct> {
+    return this.httpClient.get<ResponseProduct>(
+      `${this.apiUrl}/products/search`,
+      { params },
+    );
   }
 
   getProduct(id: number): Observable<Product> {
