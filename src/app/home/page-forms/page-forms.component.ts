@@ -1,6 +1,6 @@
 import {Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, ActivationEnd, NavigationEnd, Route, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-page-forms',

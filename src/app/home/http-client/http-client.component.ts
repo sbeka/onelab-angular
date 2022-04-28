@@ -1,21 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductService} from "../shared/services/product.service";
-import {Product, ResponseProduct} from "../shared/interfaces/product.interface";
-import {
-  catchError,
-  concatMap,
-  debounceTime,
-  delay,
-  distinctUntilChanged,
-  filter,
-  from, fromEvent, interval,
-  map,
-  mergeMap,
-  of,
-  switchMap, takeUntil,
-} from "rxjs";
+import {Product, ResponseProduct} from "../../shared/interfaces/product.interface";
+import {BaseComponent} from "../../base.component";
+import {catchError, debounceTime, distinctUntilChanged, interval, map, mergeMap, of, switchMap, takeUntil} from "rxjs";
 import {FormControl, FormGroup} from "@angular/forms";
-import {BaseComponent} from "../base.component";
+import {ProductService} from "../../shared/services/product.service";
 
 @Component({
   selector: 'app-http-client',

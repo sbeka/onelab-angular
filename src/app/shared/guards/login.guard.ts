@@ -35,7 +35,7 @@ export class LoginGuard implements CanActivate, CanActivateChild {
     if (login === 'admin') {
       return true;
     }
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/auth');
     return false;
   }
 }
